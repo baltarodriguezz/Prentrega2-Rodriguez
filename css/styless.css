@@ -1,0 +1,95 @@
+@font-face{
+    font-family:'top';
+    src: url(../fuentes/Autography.otf);
+}
+
+@font-face{
+    font-family:'titulos';
+    src: url(../fuentes/LEMONMILK-Bold.otf);
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.container-fluid {
+    gap: 650px;
+}
+
+body{
+    background-image: url(../img/playa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo{
+    width: 60px
+}
+
+.navbar-nav{
+    gap: 30px;
+}
+
+.iconodesurf{
+    width: 40px;
+}
+
+.nav-link{ 
+    color: rgb(255, 255, 255);
+    font-family: 'top';
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.productos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 50px;
+    margin-top: 100px;
+}
+
+.card{
+    transition: transform 1s ease-in-out;
+    box-shadow: 0px 0px 10px #ffffff;
+}
+
+.card-img-top{
+    transition: all 1s ease-in-out;
+}
+
+.card-img-top:hover{
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 10px rgb(200, 207, 159));
+}
+
+.card-body{
+    background-image: url(../img/arena.png);
+    background-size: cover;
+}
+
+.card-body h5{
+    color: black;
+    font-size: 15px;
+    font-family: "titulo";
+    align-items: flex-start;
+}
+
+.card-body h3{
+    color: rgb(126, 123, 123);
+    font-size: 25px;
+    font-family:'top';
+    align-items: flex-start;
+}
+
+.card-body img{
+    width: 30px;
+    position: absolute;
+    left: 230px;
+    top: 40px;
+}
