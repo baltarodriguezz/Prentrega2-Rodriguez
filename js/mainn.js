@@ -14,6 +14,7 @@ function iniciarSesion() {
     }
 }
 
+iniciarSesion ();
 function Prenda(nombre, precio, color, talles) {
     this.nombre = nombre;
     this.precio = precio;
@@ -45,13 +46,32 @@ const tops = [
     new Prenda("BASIC W", 22000, "Verde", ["S", "L"])
 ]
 
-const todasLasPrendas = remeras.concat(buzos, camisas, tops);
+let tipoPrenda;
+do {
+    tipoPrenda = prompt("¿Qué tipo de prenda deseas? (remera, buzo, camisa, top)").toLowerCase();
+} while (tipoPrenda !== "remera" && tipoPrenda !== "buzo" && tipoPrenda !== "camisa" && tipoPrenda !== "top");
+
+let prendasDisponibles;
+switch (tipoPrenda) {
+    case "remera":
+        prendasDisponibles = remeras;
+        break;
+    case "buzo":
+        prendasDisponibles = buzos;
+        break;
+    case "camisa":
+        prendasDisponibles = camisas;
+        break;
+    case "top":
+        prendasDisponibles = tops;
+        break;
+}
 
 let prendasDelColorSeleccionado;
 
 do {
-    let elegirColor = prompt("Selecciona un color");
-    prendasDelColorSeleccionado = todasLasPrendas.filter(prenda => prenda.color === elegirColor);
+    let elegirColor = prompt("Selecciona un color para tu " + tipoPrenda);
+    prendasDelColorSeleccionado = prendasDisponibles.filter(prenda => prenda.color === elegirColor);
 
     if (prendasDelColorSeleccionado.length === 0) {
         alert("No hay prendas de color " + elegirColor);
@@ -85,7 +105,7 @@ do {
 
             let prendaSeleccionada;
             do {
-                prendaSeleccionada = prompt("Por favor, seleccione una prenda:\n" + nombresPrendasDisponibles.join("\n"));
+                prendaSeleccionada = prompt("Por favor, seleccione una prenda para agregar al carrito:\n" + nombresPrendasDisponibles.join("\n"));
                 if (!nombresPrendasDisponibles.includes(prendaSeleccionada)) {
                     alert("La prenda seleccionada no está disponible. Por favor, elija una de la lista.");
                 }
