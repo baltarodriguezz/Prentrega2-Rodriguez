@@ -15,10 +15,6 @@
     z-index: 1030;
 }
 
-.container-fluid {
-    gap: 650px;
-}
-
 body{
     background-image: url(../img/playa.jpg);
     background-repeat: no-repeat;
@@ -26,19 +22,27 @@ body{
 }
 
 .logo{
-    width: 60px
+    width: 50px
 }
 
-.navbar-nav{
-    gap: 30px;
+.navbar-toggler{
+    border: none;
 }
 
 .iconodesurf{
     width: 40px;
 }
-
-.nav-link{ 
+.login{
     color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "titulos";
+    cursor: pointer;
+    position: absolute;
+    left: 1205px;
+}
+.nav-link{ 
+    color: rgb(0, 0, 0);
     font-family: 'top';
     font-size: 20px;
     font-weight: 500;
@@ -92,4 +96,103 @@ body{
     position: absolute;
     left: 230px;
     top: 40px;
+}
+.div1-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-section1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 100px;
+    background-color: aqua;
+    width: 800px;
+    height: 400px;
+}
+
+.login-div1{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(229, 179, 114);
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+}
+.login-div1 h2{
+    position: relative;
+    font-size: 34px;
+    font-family: "titulos";
+    color: white;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+.div2-login{
+    background-image: url(../img/fondo2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 400px;
+}
+
+.div2-login img{
+    position: relative;
+    width: 40px;
+    left: 350px;
+    top: 15px;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    width: 250px;
+}
+
+.boton-ingresar{
+    width: 250px;
+    background-color: white;
+    font-family: "titulos";
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.input-box label{
+    font-family: "top";
+    font-size: 25px;
+    
+}
+
+.carrito{
+    width: 30px;
+    position: relative;
+    left: 495px;
+    cursor: pointer;
+}
+
+.vaciar-carrito{
+    position: absolute;
+    left: 1065px;
+    border: none;
+    background-color: rgb(229, 179, 114);
+    color: black;
+    border-radius: 12px;
+    border-color: white;
+    width: 120px;
+}
+
+.flecha{
+    width: 27px;
+    cursor: pointer;
 }

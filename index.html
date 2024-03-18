@@ -8,131 +8,55 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img class="logo" src="img/CHELSI-modified.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Categorias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
-                    <img class="iconodesurf" src="img/icons8-navegar-ios-17-96.png" alt="">
-                </ul>
-            </div>
+  <nav class="navbar  fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="logo" src="img/CHELSI-modified.png" alt=""></a>
+        <span class="login" onclick="redirectToLoginPage()">LOGIN</span>
+        <img class="carrito" src="img/icons8-carrito-de-compras-60.png" alt="">
+         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+          <img class="iconodesurf" src="img/icons8-navegar-ios-17-96.png" alt="">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-    </nav>
-    <section class="productos">
-        <div class="card" style="width: 18rem;">
-            <img src="img/remera1.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">SURREAL JOURNEY</h5>
-                <h3>$25000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categorias</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="productos.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nosotros</a>
+              </li>
+          </ul>
         </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/remera2.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">PURE SOUL</h5>
-                <h3>$30000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/remera3.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">ELEMENTS</h5>
-                <h3>$22000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/buzo1.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">BASIC HODDIE</h5>
-                <h3>$16000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/buzo2.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">PISTACHIO</h5>
-                <h3>$24000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/buzo3.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">CLASSIC CREWNECK</h5>
-                <h3>$16000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/camisa1.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">ACAPULCO</h5>
-                <h3>$35000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/camisa2.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">PALMS</h5>
-                <h3>$32000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/camisa3.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">GREEN</h5>
-                <h3>$26000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/tops1.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">HEARTS</h5>
-                <h3>$25000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/tops2.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">HOT BODY</h5>
-                <h3>$26000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="img/tops3.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">BASIC W</h5>
-                <h3>$22000</h3>
-                <img src="img/icons8-navegar-ios-17-96.png" alt="">
+      </div>
+    </div>
+  </nav>
+    <section class="section1">
+        <div class="div1">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="img/fondo.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/fondo2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/fondo3.jpg" class="d-block w-100" style="margin-top: -10px;" alt="...">
+                </div>
+                </div>
             </div>
         </div>
     </section>

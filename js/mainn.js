@@ -1,126 +1,86 @@
-let usuarioG;
-let contraseñaG;
+const productos = document.querySelectorAll(".productos .card");
+const carritols = JSON.parse(localStorage.getItem('carrito')) || []; // Inicializar carrito desde el localStorage
 
-function iniciarSesion() {
-    let usuario = prompt("Ingresa tu usuario");
-    let contraseña = prompt("Ingrese su contraseña");
-    
-    if (usuario !== null && contraseña !== null && usuario !== "" && contraseña !== "") {
-        alert("Bienvenido " + usuario);
-        usuarioG = usuario;
-        contraseñaG = contraseña;
-    } else {
-        alert("No se ingresó correctamente el usuario y su contraseña");
+// Recorrer las tarjetas de producto
+const productosArray = [];
+for (const producto of productos) {
+    // Obtener el título, el precio y la imagen de la tarjeta actual
+    const titulo = producto.querySelector('.card-title').innerText;
+    const precio = producto.querySelector('h3').innerText;
+    const imagen = producto.querySelector('.card-img-top').getAttribute('src');
+
+    const productoObjeto = {
+        nombre: titulo,
+        precio: precio,
+        imagen: imagen 
+    };
+
+    productosArray.push(productoObjeto);
+}
+
+function redirectToLoginPage() {
+    window.location.href = 'login.html';
+}
+
+function agregarAlCarro(producto){
+    carritols.push(producto); 
+    localStorage.setItem('carrito', JSON.stringify(carritols)); 
+}
+
+for (const producto of productos) {
+    const botonAgregarCarro = producto.querySelector(".agregar-carro");
+
+    botonAgregarCarro.addEventListener("click", () => {
+        const nombreProducto = producto.querySelector(".card-title").innerText;
+        const precioProducto = producto.querySelector("h3").innerText;
+        const imagenProducto = producto.querySelector(".card-img-top").getAttribute('src');
+
+        const productoAgregar = {
+            nombre: nombreProducto,
+            precio: precioProducto,
+            imagen: imagenProducto
+        };
+        agregarAlCarro(productoAgregar); 
+    });
+}
+function crearHtml(arr) {
+    const contenedor = document.querySelector(".productos");
+    contenedor.innerHTML = "";
+    let html;
+    for (const el of arr) {
+        const { nombre, precio, imagen } = el; //desectructuraciojn
+      html = '<div class="card" style="width: 18rem;">' +
+      '<img src="' + imagen + '" class="card-img-top" alt="' + nombre + '">' +
+      '<div class="card-body">' +
+             '<h5 class="card-title">' + nombre + '</h5>' +
+             '<h3>$' + precio + '</h3>' +
+             '<img src="img/icons8-navegar-ios-17-96.png" alt="">' +
+          '</div>' +
+      '</div>';
+      contenedor.innerHTML += html;
     }
 }
 
-iniciarSesion ();
-function Prenda(nombre, precio, color, talles) {
-    this.nombre = nombre;
-    this.precio = precio;
-    this.color = color;
-    this.talles = talles;
-}
+const carritoIcono = document.querySelector(".carrito")
+const botonVaciarCarrito = document.querySelector(".vaciar-carrito");
+const login = document.querySelector(".login")
+const flecha = document.querySelector(".flecha")
 
-const remeras = [
-    new Prenda("SURREAL JOURNEY", 25000, "Beige", ["S", "M", "L"]),
-    new Prenda("PURE SOUL", 30000, "Negro", ["S", "M", "L", "XL"]),
-    new Prenda("ELEMENTS", 22000, "Blanco", ["S", "M"])
-];
+carritoIcono.addEventListener('click', ()=>{
+    crearHtml(carritols);
+    botonVaciarCarrito.style.display = "block"; 
+    carritoIcono.style.display = "none";
+    flecha.style.display = "block";
+    flecha.style.position = "relative";
+    flecha.style.left= "345px"   
+});
+botonVaciarCarrito.addEventListener("click", () => {
+    localStorage.removeItem('carrito');
+    crearHtml([]);
+});
 
-const buzos = [
-    new Prenda("BASIC HODDIE", 27000, "Negro", ["S", "M", "L", "XL"]),
-    new Prenda("PISTACHIO", 24000, "Gris", ["S", "M", "L"]),
-    new Prenda("CLASSIC CREWNECK", 16000, "Azul", ["M", "L", "XL"])
-];
+flecha.addEventListener('click', () => {
+    window.location.href = 'productos.html';
+});
 
-const camisas = [
-    new Prenda("ACAPULCO", 35000, "Negro", ["S", "M", "L", "XL"]),
-    new Prenda("PALMS", 32000, "Beige", ["S", "M", "L"]),
-    new Prenda("GREEN", 26000, "Verde", ["S", "M"])
-];
 
-const tops = [
-    new Prenda("HEARTS", 25000, "Blanco", ["S", "M"]),
-    new Prenda("HOT BODY", 26000, "Blanco", ["M", "L"]),
-    new Prenda("BASIC W", 22000, "Verde", ["S", "L"])
-]
-
-let tipoPrenda;
-do {
-    tipoPrenda = prompt("¿Qué tipo de prenda deseas? (remera, buzo, camisa, top)").toLowerCase();
-} while (tipoPrenda !== "remera" && tipoPrenda !== "buzo" && tipoPrenda !== "camisa" && tipoPrenda !== "top");
-
-let prendasDisponibles;
-switch (tipoPrenda) {
-    case "remera":
-        prendasDisponibles = remeras;
-        break;
-    case "buzo":
-        prendasDisponibles = buzos;
-        break;
-    case "camisa":
-        prendasDisponibles = camisas;
-        break;
-    case "top":
-        prendasDisponibles = tops;
-        break;
-}
-
-let prendasDelColorSeleccionado;
-
-do {
-    let elegirColor = prompt("Selecciona un color para tu " + tipoPrenda);
-    prendasDelColorSeleccionado = prendasDisponibles.filter(prenda => prenda.color === elegirColor);
-
-    if (prendasDelColorSeleccionado.length === 0) {
-        alert("No hay prendas de color " + elegirColor);
-    } else {
-        let mensaje = "Prendas de color " + elegirColor + " encontradas:\n";
-        prendasDelColorSeleccionado.forEach(prenda => {
-            mensaje += "Nombre: " + prenda.nombre + "\n";
-        });
-        alert(mensaje);
-
-        let talleSeleccionado;
-        do {
-            talleSeleccionado = prompt("Por favor, selecciona el talle de la prenda (" + prendasDelColorSeleccionado[0].talles.join(", ") + "):");
-            if (!prendasDelColorSeleccionado[0].talles.includes(talleSeleccionado)) {
-                alert("El talle seleccionado no es válido. Por favor, elija uno de los tamaños disponibles.");
-            }
-        } while (!prendasDelColorSeleccionado[0].talles.includes(talleSeleccionado));
-
-        let precioDisponible = parseFloat(prompt("Selecciona tu precio disponible"));
-
-        const prendasDisponibles = prendasDelColorSeleccionado.filter(prenda => prenda.talles.includes(talleSeleccionado) && prenda.precio <= precioDisponible);
-
-        if (prendasDisponibles.length > 0) {
-            let mensaje2 = "Prendas disponibles dentro de tu rango de precio y en el talle seleccionado:\n";
-            prendasDisponibles.forEach(prenda => {
-                mensaje2 += "Nombre: " + prenda.nombre +  "\n";
-            });
-            alert(mensaje2);
-
-            const nombresPrendasDisponibles = prendasDisponibles.map(prenda => prenda.nombre);
-
-            let prendaSeleccionada;
-            do {
-                prendaSeleccionada = prompt("Por favor, seleccione una prenda para agregar al carrito:\n" + nombresPrendasDisponibles.join("\n"));
-                if (!nombresPrendasDisponibles.includes(prendaSeleccionada)) {
-                    alert("La prenda seleccionada no está disponible. Por favor, elija una de la lista.");
-                }
-            } while (!nombresPrendasDisponibles.includes(prendaSeleccionada));
-
-            function agregarAlCarrito(carrito, prendaSeleccionada) {
-                carrito.push(prendaSeleccionada);
-                alert("¡Prenda " + prendaSeleccionada + " agregada al carrito!");
-            }
-
-            const carrito = [];
-            agregarAlCarrito(carrito, prendaSeleccionada);
-            console.log(carrito);
-        } else {
-            alert("No hay prendas disponibles dentro de tu rango de precio en el talle seleccionado.");
-        }
-    }
-} while (prendasDelColorSeleccionado.length === 0);
