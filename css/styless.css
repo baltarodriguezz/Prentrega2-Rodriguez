@@ -15,11 +15,7 @@
     z-index: 1030;
 }
 
-body{
-    background-image: url(../img/playa.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 
 .logo{
     width: 50px
@@ -101,22 +97,23 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 641px;
 }
 .login-section1{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin-top: 100px;
+    margin-top: 5px;
     background-color: aqua;
     width: 800px;
-    height: 400px;
+    height: 400px
 }
 
 .login-div1{
     display: flex;
     flex-direction: column;
-    background-color: rgb(229, 179, 114);
+    background-color: black;
     align-items: center;
     justify-content: center;
     width: 400px;
@@ -126,13 +123,24 @@ body{
     position: relative;
     font-size: 34px;
     font-family: "titulos";
-    color: white;
+    color: #C6AC8F;
 }
 .form{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 13px;
+    flex-direction: column;
+}
+.form a{
+    text-decoration: none;
+    color: white;
+    font-family: "titulo";
+}
+.form-registrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 .div2-login{
@@ -160,7 +168,7 @@ body{
 
 .boton-ingresar{
     width: 250px;
-    background-color: white;
+    background-color: #C6AC8F;
     font-family: "titulos";
     border: none;
     outline: none;
@@ -171,6 +179,7 @@ body{
 .input-box label{
     font-family: "top";
     font-size: 25px;
+    color: #C6AC8F;
     
 }
 
@@ -183,16 +192,251 @@ body{
 
 .vaciar-carrito{
     position: absolute;
-    left: 1065px;
+    left: 1060px;
     border: none;
-    background-color: rgb(229, 179, 114);
+    background-color: rgb(217, 179, 129);
     color: black;
     border-radius: 12px;
     border-color: white;
     width: 120px;
 }
 
-.flecha{
-    width: 27px;
+
+.nav-item{
+    display: flex;
+}
+
+.icon{
+    top: 8px;
+    margin-right: 5px;
+}
+
+
+.dropdown-item{
+    font-family: "titulos";
+    color: rgb(152, 152, 152);
+    font-size: 10px;
+}
+
+.dropdown-item:hover {
+    box-shadow: 0 0 10px rgb(212, 156, 83); /* Cambiado el color a rojo */
+}
+
+.div-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+    background-color: #C6AC8F;
+    gap: 200px;
+    padding: 20px;
+}
+
+.div-contacto-footer div{
+    display: flex;
+    gap: 5px;
+    margin: 20px;
+}
+.div-contacto-footer h4{
+    font-size: 40px;
+    font-family: "top";
+    margin: 10px;
+}
+
+.div-contacto-footer li{
+    list-style: none;
+    
+}
+
+.div-contacto-footer img{
+    width: 25px;
+}
+
+.div-redes-footer img{
+    width: 25px;
+}
+.div-redes-footer a{
+    text-decoration: none;
+    color: black;
+}
+.div-redes-footer li{
+    list-style: none;
+    text-decoration: none;
+}
+.div-redes-footer h4{
+    font-size: 40px;
+    font-family: "top";
+    margin: 10px;
+}
+
+.div-redes-footer div{
+    display: flex;
+    gap: 5px;
+    margin: 20px;
+}
+.section1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 641px;
+}
+.div1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 900px;
+    height: 800px;
+    clip-path: polygon(42% 1%, 100% 0, 100% 100%, 0 100%, 0 40%);
+    margin-bottom: 50px;
+}
+body{
+    background-image: url(../img/playa.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.surftyle{
+    position: relative;
+    rotate: -90deg;
+    width: 283px;
+    top: 406px;
+    left: 66px;
+    color: black;
+    font-family: "titulo";
+    font-size:30px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.flecha-atras {
+    display: none; 
+    width: 30px; 
+    height: 30px; 
     cursor: pointer;
+    position: fixed; 
+    top: 23px; 
+    left: 1111px; 
+    z-index: 9999;
+}
+
+.vaciar-carrito {
+    background-color: #dc3545; 
+    color: #fff; 
+    padding: 8px ; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    display: none;
+    left: 980px;
+}
+
+.vaciar-carrito:hover {
+    background-color: #c82333; 
+}
+
+.vaciar-carrito:focus {
+    outline: none;
+}
+
+.mensaje {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.mensaje h2{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin: 25px;
+    text-align: center;
+}
+
+.mensaje p{
+    color: #C6AC8F;
+    font-size: 30px;
+    font-family: "top";
+}
+
+
+.imagenPerfil{
+    position: fixed;
+    right: 69px;
+    top: 18px;
+    width: 40px;
+}
+
+.carritoIconoo{
+    position: relative;
+    left: 530px;
+    width: 30px;
+}
+
+.agregar-carro{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: "titulo";
+    border: none;
+    border-radius: 5px;
+}
+
+.div1-contacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 641px;
+}
+
+.section1-contacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 5px;
+    background-color: aqua;
+    width: 800px;
+    height: 400px
+}
+
+.div2-contacto{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+}
+.div2-contacto h2{
+    position: relative;
+    font-size: 34px;
+    font-family: "titulos";
+    color: #C6AC8F;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    flex-direction: column;
+}
+
+.sweetalert-popup{
+    font-family: 'Arial', sans-serif; 
+}
+
+.espacio{
+    height: 491px;
+    justify-content: center;
+
+}
+.espacio2{
+    width: 600px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    background-color:#C6AC8F ;
+    font-size: 30px;
+    font-family: "titulo";
+    
 }
